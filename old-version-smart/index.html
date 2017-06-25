@@ -1,0 +1,78 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Tic Tac Toe by @buoyantair</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/tic-tac-toe.css" />
+</head>
+
+<body>
+  <header class="container-fluid">
+    <div class="navbar bg-faded">
+      <div class="brand">
+        <h3>TIC TAC TOE GAME</h3>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="game" id="game">
+        <!---->
+        <div class="boxes">
+          <div class="r">
+            <div class="box" onclick="plot(this)"></div>
+            <div class="box" onclick="plot(this)"></div>
+            <div class="box" onclick="plot(this)"></div>
+          </div>
+          <div class="r">
+            <div class="box" onclick="plot(this)"></div>
+            <div class="box" onclick="plot(this)"></div>
+            <div class="box" onclick="plot(this)"></div>
+          </div>
+          <div class="r">
+            <div class="box" onclick="plot(this)"></div>
+            <div class="box" onclick="plot(this)"></div>
+            <div class="box" onclick="plot(this)"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="coinCheck">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Did you select a coin? if not, please select!</p>
+        </div>
+        <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Alrighty</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="userWin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Yay! You won!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="userLose">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Aww you lose! try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="js/tic-tac-toe.js"></script>
+</body>
+
+</html>

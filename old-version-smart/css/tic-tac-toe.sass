@@ -1,0 +1,130 @@
+$canvas: 550px
+$warning: #DB5461
+$player: #1F9E7C,
+$player-hover: #109370,
+
+$sb-w: $canvas *0.8
+$sb-h: $canvas * .3
+=flex($position, $direction)
+    display: flex
+    flex-flow: $position
+    justify-content: $direction
+
+body
+    background: linear-gradient(45deg, #B7F0AD,#D2FF96,#EDFF7A, #E8D33F,#D17B0F)
+
+.navbar
+    border-bottom-right-radius: 10px
+    border-bottom-left-radius: 10px
+    color: #FFF
+    background: linear-gradient(135deg, #323031, #595557)
+.game
+    width: $canvas
+    height: $canvas
+    background: #FFF
+    margin-top: 3em
+    margin-bottom: 3em
+    border-radius: 10px
+    box-shadow: 0px 10px 50px 0px rgba(0,0,0,0.2)
+    overflow: hidden
+    #dash
+        display: block
+        position: relative
+        top: 0
+        left: 0
+        width: $canvas
+        height: $canvas
+        opacity: 1
+        transition: all 3s
+        background: linear-gradient(135deg, #323031, #595557)
+        .content
+            width: $canvas
+            height: $canvas
+            +flex(column wrap, center)
+            text-align: center
+            color: #FFF
+            .selectionbox
+                width: $sb-w
+                height: $sb-h
+                margin: 1em auto
+                border-radius: 10px
+                background: linear-gradient(transparent , transparentize(#323031, 0.3) 30%, transparent 100%)
+                +flex(row wrap, space-around)
+                .selection
+                    +flex(column wrap, center)
+                    text-align: center
+                    font-size: 100px
+                    background: transparentize(#323031, 0.8)
+                    width: $sb-w/2.4
+                    height: $sb-h*0.9
+                    margin: auto
+                    transition: all .5s
+                #heads:hover
+                    background: #E3655B
+                #tails:hover
+                    background: #8CB369
+                .selection:hover
+                    cursor: pointer
+                    background: transparentize(#323031, 0.3)
+        #close
+            position: relative
+            left: 90%
+            top: 1em
+            width: 2em
+            height: 2em
+            +flex(column wrap, center)
+            text-align: center
+            background: $warning
+            color: #FFF
+            border-radius: 100%
+            transition: all .2s
+        #close:hover
+            background: #FFF
+            color: $warning
+            cursor: pointer
+            font-weight: bolder
+            transform: scale(1.3)
+    .boxes
+        .r
+            width: $canvas
+            height: $canvas/3
+            +flex(row wrap, center)
+            color: #FFF
+            .box
+                width: $canvas/3
+                height: $canvas/3
+                transition: all .5s
+                background: #FFF
+                border: 0px dashed darken(#FFF, 20%)
+                +flex(column wrap, center)
+                text-align: center
+            .checked
+                +flex(column wrap, center)
+                text-align: center
+                width: $canvas/3
+                height: $canvas/3
+                color: #FFF
+                font-size: 10em
+                animation: pop .5s
+            .box:hover
+                cursor: pointer
+                color: #FFF
+
+/* BOOT STRAP OVER WRITE*/
+.btn-primary
+    background: $warning
+    border: none
+.btn-primary:hover
+    background: #FFF
+    cursor: pointer
+    color: $warning
+
+@keyframes pop
+    0%
+        transform: scale(0)
+        border-radius: 100%
+    50%
+        transform: scale(1.2)
+    100%
+        transform: scale(1)
+        border-radius: 0%
